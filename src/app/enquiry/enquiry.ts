@@ -82,7 +82,6 @@ saveDraft() {
 
   alert('Draft Saved Successfully ✅');
 
-  // NO page reload here
 }
 
 
