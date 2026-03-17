@@ -1,7 +1,6 @@
 <div class="main-wrapper">
   <div class="form-container">
 
-    <!-- HEADER -->
     <div class="header mb-4">
       <h6>Freight Forwarding ERP</h6>
       <h3>Enquiry Form</h3>
@@ -10,7 +9,6 @@
 
     <div class="row g-4">
 
-      <!-- ================= BOX 1 ================= -->
       <div class="col-md-6">
         <div class="card-box">
           <h5>Enquiry Details</h5>
@@ -109,7 +107,6 @@
         </div>
       </div>
 
-      <!-- ================= BOX 2 ================= -->
       <div class="col-md-6">
         <div class="card-box">
           <h5>Container Mode</h5>
@@ -189,7 +186,6 @@
         </div>
       </div>
 
-      <!-- ================= BOX 3 ================= -->
       <div class="col-md-6">
         <div class="card-box">
           <h5>Cargo & Package Details</h5>
@@ -252,13 +248,11 @@
         </div>
       </div>
 
-      <!-- ================= BOX 4 ================= -->
       <div class="col-md-6">
         <div class="card-box">
 
           <h5>Freight Types</h5>
 
-          <!-- Chips -->
           <div class="freight-chip-wrapper mb-3">
             <div class="freight-chip"
                 [class.active]="enquiry.freightType === 'Prepaid'"
@@ -273,7 +267,6 @@
             </div>
           </div>
 
-          <!-- Gross Weight -->
           <div class="row mb-3 align-items-center">
             <div class="col-4">Gross Weight</div>
 
@@ -302,7 +295,6 @@
             </div>
           </div>
 
-          <!-- Net Weight -->
           <div class="row mb-3 align-items-center">
             <div class="col-4">Net Weight</div>
 
@@ -319,7 +311,6 @@
             </div>
           </div>
 
-          <!-- Volume (CBB) -->
           <div class="row mb-3 align-items-center">
             <div class="col-4">Volume (CBB)</div>
 
@@ -336,7 +327,6 @@
             </div>
           </div>
 
-          <!-- Volume Type -->
           <div class="row mb-3 align-items-center">
             <div class="col-4">Volume Type</div>
 
@@ -346,7 +336,6 @@
             </div>
           </div>
 
-          <!-- Bottom Checkboxes -->
           <div class="row">
             <div class="col-6">
               <label class="custom-check">
@@ -370,7 +359,6 @@
         </div>
       </div>
 
-    <!-- BUTTONS -->
     <div class="bottom-buttons mt-4">
       <button class="btn btn-light"
               (click)="cancel()">Cancel</button>
