@@ -1,0 +1,389 @@
+<div class="main-wrapper">
+  <div class="form-container">
+
+    <!-- HEADER -->
+    <div class="header mb-4">
+      <h6>Freight Forwarding ERP</h6>
+      <h3>Enquiry Form</h3>
+      <p>Enquiry ID: ENQ2025-081</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- ================= BOX 1 ================= -->
+      <div class="col-md-6">
+        <div class="card-box">
+          <h5>Enquiry Details</h5>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Branch</div>
+            <div class="col-8">
+              <input class="form-control" [(ngModel)]="enquiry.branch">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+          <div class="col-4">Transport Mode</div>
+          <div class="col-8 d-flex align-items-center gap-2">
+
+            <span
+              class="transport-btn"
+              [class.active]="enquiry.transportMode==='Sea'"
+              (click)="enquiry.transportMode='Sea'">
+              Sea
+            </span>
+
+            <span
+              class="transport-btn"
+              [class.active]="enquiry.transportMode==='Air'"
+              (click)="enquiry.transportMode='Air'">
+              Air
+            </span>
+
+            <span class="transport-label">LCL</span>
+
+          </div>
+        </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Container</div>
+            <div class="col-8">
+              <input class="form-control" [(ngModel)]="enquiry.container">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Shipper</div>
+            <div class="col-8">
+              <div class="position-relative">
+                <input class="form-control pe-4"
+                      [(ngModel)]="enquiry.shipper">
+
+                <i class="bi bi-search shipper-icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Origin ETD</div>
+            <div class="col-8">
+              <div class="origin-wrapper">
+                <i class="bi bi-geo-alt origin-icon"></i>
+
+                <input class="form-control origin-input"
+                      [(ngModel)]="enquiry.origin">
+
+                <div class="origin-toggle">
+                  <span
+                    [class.active]="enquiry.originType==='FCL'"
+                    (click)="enquiry.originType='FCL'">
+                    FCL
+                  </span>
+
+                  <span
+                    [class.active]="enquiry.originType==='LCL'"
+                    (click)="enquiry.originType='LCL'">
+                    LCL
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Organization</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.orgName">
+            </div>
+          </div>
+
+          <div class="row align-items-center">
+            <div class="col-4">Planned Container</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.plannedContainer">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= BOX 2 ================= -->
+      <div class="col-md-6">
+        <div class="card-box">
+          <h5>Container Mode</h5>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Sea</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.containerBranch">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Transport Mode</div>
+            <div class="col-8 d-flex gap-2">
+              <button class="toggle-btn"
+                      [class.active]="enquiry.containerTransportMode==='Air'"
+                      (click)="enquiry.containerTransportMode='Air'">Air</button>
+
+              <button class="toggle-btn"
+                      [class.active]="enquiry.containerTransportMode==='Road'"
+                      (click)="enquiry.containerTransportMode='Road'">Road</button>
+
+              <button class="toggle-btn"
+                      [class.active]="enquiry.containerTransportMode==='Rail'"
+                      (click)="enquiry.containerTransportMode='Rail'">Rail</button>
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Direction</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.direction">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Shipment Date</div>
+            <div class="col-4">
+              <input type="datetime-local"
+                     class="form-control"
+                     [(ngModel)]="enquiry.shipmentDate">
+            </div>
+            <div class="col-4">
+              <button class="pill-btn">Domestic</button>
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Shipment Type</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.shipmentType">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Destination ETA</div>
+            <div class="col-8">
+              <input type="datetime-local"
+                     class="form-control"
+                     [(ngModel)]="enquiry.destinationETA">
+            </div>
+          </div>
+
+          <div class="row align-items-center">
+            <div class="col-4">Freight Terms</div>
+            <div class="col-8 d-flex align-items-center gap-2">
+              <input type="radio"
+                     [(ngModel)]="enquiry.freightTerms"
+                     value="Third Party">
+              <span>Third Party</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= BOX 3 ================= -->
+      <div class="col-md-6">
+        <div class="card-box">
+          <h5>Cargo & Package Details</h5>
+
+          <textarea class="form-control mb-3"
+                    rows="3"
+                    [(ngModel)]="enquiry.cargoDesc"></textarea>
+
+          <div class="row mb-3 align-items-center">
+          <div class="col-4">No. of Packages</div>
+
+          <div class="col-4">
+            <input class="form-control"
+                  [(ngModel)]="enquiry.packages">
+          </div>
+
+          <div class="col-2 package-option"
+              (click)="enquiry.packages = '250'">
+            250
+          </div>
+
+          <div class="col-2 package-option"
+              (click)="enquiry.packages = '1000'">
+            1000
+          </div>
+        </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Gross Weight</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.grossWeight">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Net Weight</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.netWeight">
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Volume (CBM)</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.volume">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">Commodity Code</div>
+            <div class="col-8">
+              <input class="form-control"
+                     [(ngModel)]="enquiry.commodityCode">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= BOX 4 ================= -->
+      <div class="col-md-6">
+        <div class="card-box">
+
+          <h5>Freight Types</h5>
+
+          <!-- Chips -->
+          <div class="freight-chip-wrapper mb-3">
+            <div class="freight-chip"
+                [class.active]="enquiry.freightType === 'Prepaid'"
+                (click)="enquiry.freightType = 'Prepaid'">
+              Prepaid
+            </div>
+
+            <div class="freight-chip"
+                [class.active]="enquiry.freightType === 'Third Party'"
+                (click)="enquiry.freightType = 'Third Party'">
+              Third Party
+            </div>
+          </div>
+
+          <!-- Gross Weight -->
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Gross Weight</div>
+
+            <div class="col-4">
+              <select class="form-control"
+                      [(ngModel)]="enquiry.grossWeight">
+                <option value="">Select</option>
+                <option value="1200">1,200</option>
+                <option value="1050">1,050</option>
+              </select>
+            </div>
+
+            <div class="col-2">
+              <label class="custom-check">
+                Cross Trade
+              </label>
+            </div>
+
+            <div class="col-2">
+              <label class="custom-check">
+                <input type="checkbox"
+                      [(ngModel)]="enquiry.domestic">
+                <span></span>
+                Domestic
+              </label>
+            </div>
+          </div>
+
+          <!-- Net Weight -->
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Net Weight</div>
+
+            <div class="col-3">
+              <select class="form-control"
+                      [(ngModel)]="enquiry.netWeight">
+                <option value="1050">1,050</option>
+                <option value="1200">1,200</option>
+              </select>
+            </div>
+
+            <div class="col-3">
+              Cartons
+            </div>
+          </div>
+
+          <!-- Volume (CBB) -->
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Volume (CBB)</div>
+
+            <div class="col-3">
+              <select class="form-control"
+                      [(ngModel)]="enquiry.volume">
+                <option value="2.5">2.5</option>
+                <option value="3.0">3.0</option>
+              </select>
+            </div>
+
+            <div class="col-3">
+              Cartons
+            </div>
+          </div>
+
+          <!-- Volume Type -->
+          <div class="row mb-3 align-items-center">
+            <div class="col-4">Volume Type</div>
+
+            <div class="col-8">
+              <input class="form-control"
+                    [(ngModel)]="enquiry.volumeType">
+            </div>
+          </div>
+
+          <!-- Bottom Checkboxes -->
+          <div class="row">
+            <div class="col-6">
+              <label class="custom-check">
+                <input type="checkbox"
+                      [(ngModel)]="enquiry.temperatureControl">
+                <span></span>
+                Temperature Control
+              </label>
+            </div>
+
+            <div class="col-6">
+              <label class="custom-check">
+                <input type="checkbox"
+                      [(ngModel)]="enquiry.hazardous">
+                <span></span>
+                Hazardous Info
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- BUTTONS -->
+    <div class="bottom-buttons mt-4">
+      <button class="btn btn-light"
+              (click)="cancel()">Cancel</button>
+
+      <button class="btn btn-outline-primary"
+              (click)="saveDraft()">Save Draft</button>
+
+      <button class="btn btn-primary"
+              (click)="submit()">Submit Enquiry</button>
+
+      <button class="btn btn-success"
+              (click)="generateQuote()">Generate Quote</button>
+    </div>
+
+  </div>
+</div>
